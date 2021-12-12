@@ -1,8 +1,12 @@
 # Projet-RV-Test
+# Unity version 2021.1.26f1
+# Compatible with most version of Unity
 
 Because we can't develop a IOS application, so this project is based on Android.
 
 Import unity project, then build the project in the File -> Build setting -> Android -> Build.
+
+The player object and other scripts can be found by clicking MyNetworkManager in the Hierarchy, then Capsule in the Player Prefab on the right.
 
 Once installed the application on an android phone, make sure that the computer and the phone is under the same network.
 
