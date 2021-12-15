@@ -26,19 +26,24 @@ public class AirplaneController : MonoBehaviour
     [SerializeField]
     Text displayText = null;
 
-    float thrustPercent;
-    float brakesTorque;
+    public float thrustPercent;
+    public float brakesTorque;
+    public GameObject bullet;
+    public float bulletSpeed;
+    LineRenderer pointeur;
 
     //protected NowControlling myController;
 
     AircraftPhysics aircraftPhysics;
     Rigidbody rb;
+    public GameObject cible;
 
     private void Start()
     {
         aircraftPhysics = GetComponent<AircraftPhysics>();
         rb = GetComponent<Rigidbody>();
-       // myController = GetComponent<NowControlling>();
+        // myController = GetComponent<NowControlling>();
+        pointeur = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -47,24 +52,33 @@ public class AirplaneController : MonoBehaviour
         //Roll = Input.GetAxis("Horizontal");
         //Yaw = Input.GetAxis("Yaw");
 
-        //Pitch = myController.pitch;
-        //Roll = -myController.roll;
-        //Yaw = myController.yaw;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            thrustPercent = thrustPercent > 0 ? 0 : 1f;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    thrustPercent = thrustPercent > 0 ? 0 : 1f;
+        //}
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             Flap = Flap > 0 ? 0 : 0.3f;
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            brakesTorque = brakesTorque > 0 ? 0 : 100f;
-        }
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Point();
+        //}
+
+        //if(Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    Fire();
+        //}
+
+        pointeur.SetPosition(0, transform.position);
+        pointeur.SetPosition(1, cible.transform.position);
+
+        //if (Input.GetKeyDown(KeyCode.B))
+        //{
+        //    brakesTorque = brakesTorque > 0 ? 0 : 100f;
+        //}
 
         displayText.text = "V: " + ((int)rb.velocity.magnitude).ToString("D3") + " m/s\n";
         displayText.text += "A: " + ((int)transform.position.y).ToString("D4") + " m\n";
@@ -111,5 +125,18 @@ public class AirplaneController : MonoBehaviour
     {
         if (!Application.isPlaying)
             SetControlSurfecesAngles(Pitch, Roll, Yaw, Flap);
+    }
+
+    public void Point()
+    {
+        pointeur.enabled = true;
+    }
+
+    public void Fire()
+    {
+        GameObject myBullet = Instantiate(bullet);
+        myBullet.transform.SetPositionAndRotation(transform.GetChild(5).position, transform.rotation);
+        myBullet.GetComponent<Rigidbody>().velocity = myBullet.transform.forward * bulletSpeed + rb.velocity;
+        pointeur.enabled = false;
     }
 }

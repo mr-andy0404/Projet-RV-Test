@@ -1,53 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using Mirror;
 
-public class PositionControl : NetworkBehaviour
+public class MicrophoneInput : MonoBehaviour
 {
-    private AvionGyroscope AG;
 
-    [SyncVar]
     [Range(0.0f, 0.01f)]
     public float MicLoudness;
 
     private string _device;
-
-    [SyncVar]
-    public int touch;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        AG = GetComponent<AvionGyroscope>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!isLocalPlayer) return;
-
-        transform.position = new Vector3(-AG.pitch, AG.roll, AG.yaw);
-
-        MicLoudness = LevelMax();
-        CmdMicLoudness(MicLoudness);
-
-        touch = Input.touchCount;
-        CmdBrakeControl(touch);
-    }
-
-    [Command]
-    void CmdMicLoudness(float _MicLoudness)
-    {
-        MicLoudness = _MicLoudness;
-    }
-
-    [Command]
-    void CmdBrakeControl(int _touch)
-    {
-        touch = _touch;
-    }
 
     //mic initialization
     void InitMic()
@@ -83,6 +46,16 @@ public class PositionControl : NetworkBehaviour
             }
         }
         return levelMax;
+    }
+
+
+
+    void Update()
+    {
+        
+        // levelMax equals to the highest normalized value power 2, a small number because < 1
+        // pass the value to a static var so we can access it from anywhere
+        MicLoudness = LevelMax();
     }
 
     bool _isInitialized;
@@ -128,6 +101,4 @@ public class PositionControl : NetworkBehaviour
 
         }
     }
-
-
 }
