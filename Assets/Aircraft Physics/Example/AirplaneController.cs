@@ -62,12 +62,12 @@ public class AirplaneController : MonoBehaviour
             Flap = Flap > 0 ? 0 : 0.3f;
         }
 
-        //if(Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    Point();
         //}
 
-        //if(Input.GetKeyUp(KeyCode.Space))
+        //if (Input.GetKeyUp(KeyCode.Space))
         //{
         //    Fire();
         //}

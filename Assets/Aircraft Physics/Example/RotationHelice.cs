@@ -17,6 +17,9 @@ public class RotationHelice : MonoBehaviour
     void Update()
     {
         Acceleration = AC.GetComponent<AirplaneController>().thrustPercent;
-        transform.Rotate(1 + Acceleration * rotationSpeed * Time.deltaTime * AC.GetComponent<Rigidbody>().velocity.magnitude + AC.GetComponent<Rigidbody>().velocity.magnitude * 0.01f, 0, 0);
+        if (AC.GetComponent<BeControlled>().engineStart)
+            transform.Rotate(1 + Acceleration * rotationSpeed * Time.deltaTime * AC.GetComponent<Rigidbody>().velocity.magnitude + AC.GetComponent<Rigidbody>().velocity.magnitude * 0.01f, 0, 0);
+        else
+            transform.rotation = transform.rotation;
     }
 }
