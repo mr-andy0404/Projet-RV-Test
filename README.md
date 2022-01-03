@@ -34,13 +34,17 @@ Because we can't develop a IOS application (which requires an Apple developper's
    ![147983029-350a15a3-9cde-4004-a56a-8cbfafa60946](https://user-images.githubusercontent.com/82207694/147983570-54705b17-669e-4c02-9e50-700a070810da.png)
 
 
-   On the phone, type the IP address of the computer into the blank next to the "Client" button, then click "Client".
+   On the phone, type the IP address of the computer into the blank next to the "Client" button, then hold your phone upright and click "Client".
    
    ![Screenshot 2022-01-03 at 22 39 49](https://user-images.githubusercontent.com/82207694/147983649-235c3406-9e2b-4835-828a-ef49e7a09aff.png)
 
 
 4. Normally, the phone is connect with the computer, and you can see the plane on the phone too. If the variables for the plane pitch, roll, and yaw do not change for the first time, try to "Stop client" on the phone, and click "Client" again. This may be due to the initialization of the gyroscope. The second time will work fine.
 
+   Now you can control the airplane using your phone like a joystick!
+   
+   like this one ->  ![Screenshot 2022-01-04 at 00 03 58](https://user-images.githubusercontent.com/82207694/147989771-20292a85-1ca5-4498-a5fd-76692b88541b.png)
+   
    Control of flap remains of the computer, "F" the change flap. (Rarely used)
 
 5. Tap the screen with 5 fingers to start the engine. Tap again to shut it down.
