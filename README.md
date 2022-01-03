@@ -15,7 +15,7 @@ Originally, this is done with bluetooth. However, the bluetooth component in Uni
 
 So we create a little game, in which you can control an airplane on the computer wirelessly with your mobile phone as a joystick.
 
-This project is done in two part, the communication part, and the environment part. We haven't these two parts yet, so here is only the communicaiton part.
+This project is done in two part, the communication part, and the environment part. We haven't combined these two parts yet, so here is only the communicaiton part.
 
 ## Guide of the project
 Because we can't develop a IOS application (which requires an Apple developper's account), so this project is based on Android.
