@@ -1,7 +1,13 @@
-# Projet-RV-Test
-//Unity version 2021.1.26f1
-#Compatible with most version of Unity
+# Project-Option-VR Network communication test
+Unity version 2021.1.26f1
 
+Compatible with most version of Unity
+
+Plane physique model based on https://github.com/gasgiant/Aircraft-Physics
+
+## Project demonstration
+
+The object of our option's project was to realize the commnunication between mobile phone and computer. 
 
 Because we can't develop a IOS application, so this project is based on Android.
 
@@ -15,7 +21,6 @@ On computer, click "Server Only".
 
 On the phone, type the IP address of the computer into the blank next to the "Client" button, then click "Client".
 
-Normally, the phone is connect with the computer, and you can see the plane on the phone too. If the variables for the plane pitch, roll, and yaw do not change,
-try to "Stop client" on the phone, and click "Client" again. This may be due to the initialization of the gyroscope. The second time will work fine.
+Normally, the phone is connect with the computer, and you can see the plane on the phone too. If the variables for the plane pitch, roll, and yaw do not change for the first time, try to "Stop client" on the phone, and click "Client" again. This may be due to the initialization of the gyroscope. The second time will work fine.
 
-Control of the throttle and flap remains of the computer. "Space" the change the throttle, and "F" the change flap.
+Control of flap remains of the computer, "F" the change flap. (Rarely used)
