@@ -3,7 +3,9 @@ Unity version 2021.1.26f1
 
 Compatible with most version of Unity
 
-Airplane physique model is based on https://github.com/gasgiant/Aircraft-Physics 
+Demonstration video link: https://youtu.be/pLiqaGcvL4w 
+
+Airplane model is based on https://github.com/gasgiant/Aircraft-Physics 
 
 Network communication is realized through Mirror https://mirror-networking.gitbook.io/docs/
 
